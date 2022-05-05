@@ -1,0 +1,17 @@
+.body-register{
+    background-image: url("../media/register.jpg");
+}
+
+
+#titulo-register{
+    color: white;
+    font-size: 80;
+    
+}
+
+
+#titulo-register:hover{
+    color: magenta;
+    font-size: 90;
+    
+}
