@@ -21,7 +21,7 @@ function registerUser($correo, $nombres, $edad, $descripcion, $contraseña){
 
 
 
-if(isset($_POST['registrarUsuario'])){
+if(($_POST['registrarUsuario'])){
     registerUser($_POST["correo"],$_POST["nombres"],$_POST["edad"],$_POST["descripcion"],$_POST["contraseña"]);
     header("Location:".VIEWS_PATH."login.php?status=1");
 }

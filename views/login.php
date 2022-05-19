@@ -5,7 +5,7 @@ define('JS_PATH', "../js/");
 include(VIEWS_PATH . 'header.php')
 ?>
 
-<body style="background-color: rgb(153, 147, 236);">
+<body class="body-login">
     <div class="container-fluid">
         <div class="row" style="margin-top: 10%;">
             <div class="col-md-4">
