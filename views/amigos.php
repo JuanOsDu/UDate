@@ -3,7 +3,7 @@ define('VIEWS_PATH', '../views/');
 define('CONTROLLER_PATH', '../Controller/');
 define('JS_PATH', "../js/");
 include(VIEWS_PATH . 'header.php');
-require_once(CONTROLLER_PATH . "fotos.php");
+require(CONTROLLER_PATH . "amigos.php");
 if (isset($_GET["status"])) {
     if ($_GET["status"] == 1) {
         session_start();
@@ -12,7 +12,7 @@ if (isset($_GET["status"])) {
         }
 ?>
 
-        <body style="background-color: rgb(255, 112, 248) ;">
+        <body style="background-color: rgb(255, 112, 248) ;" class="body-amigos">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
@@ -80,7 +80,7 @@ if (isset($_GET["status"])) {
                                     <i class="icon fa-solid fa-3x fa-people-arrows-left-right"></i>
                                 </a>
                                 <a href="./login.php?exit=1">
-                                    <i class="icon fa-solid fa-door-open fa-3x"></i>
+                                <i class="icon fa-solid fa-door-open fa-3x"></i>
                                 </a>
                             </span>
                         </div>
@@ -88,62 +88,35 @@ if (isset($_GET["status"])) {
                 </nav>
                 <div class="row " style="margin-top:50px; ">
 
-                    <div class="col-md-5">
+                    <div class="col-md-6">
                         <?php
-                        $fotos = getFotos($_SESSION['id_usuario']);
-                        while ($row = mysqli_fetch_assoc($fotos)) {
+
+                        $amigos = getAmigos($_SESSION['id_usuario']);
+                        if ($amigos == null) {
                         ?>
-                            <div class="card cardFotos">
-
-                                <div class="card-body">
-                                    <img class="imgfeed" src="../media/<?php echo $row['ruta']; ?>">
-
-
+                            <h3>Todavia no tienes amigos, que esperas?</h3>
+                            <?php
+                        } else {
+                            while ($row = mysqli_fetch_assoc($amigos)) {
+                            ?>
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?php echo $row['nombres']; ?> - <?php echo $row['pais']; ?></h5>
+                                        <p class="card-text"><?php echo $row['descripcion'] ?>.</p>
+                                        <a href="./extProfile.php?id_usuario=<?php echo $row["id_usuario"]; ?>" class="btn btn-primary">Ver perfil</a>
+                                    </div>
                                 </div>
-                                <div class="card-footer">
-                                    <h3><?php echo $row['descripcion']; ?></h3>
-                                </div>
-                            </div>
+
                         <?php
+                            }
                         }
+
                         ?>
 
                     </div>
-                    <div class="col-md-7">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="card">
 
-                                    <div class="card-body">
-                                        <p style="font-size:2vw; color:white">
-                                            <?php
-
-                                            echo $_SESSION['descripcion'];
-                                            ?>
-                                        </p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="card img-map">
-                                    <div class="card-body">
-
-                                        <img src="../media/map1.png" class="profileMap">
-
-
-
-
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
                 </div>
+            </div>
             </div>
         </body>
 

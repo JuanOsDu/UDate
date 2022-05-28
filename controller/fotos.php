@@ -1,4 +1,8 @@
+
+
 <?php
+
+
 if (!defined('LIBRARIES_PATH')) {
     define('LIBRARIES_PATH', '../libraries/');
 }
@@ -12,18 +16,10 @@ require_once(LIBRARIES_PATH . "Conexion.php");
 
 
 
-function getUser($id_usuario){
+function getFotos($id_usuario)
+{
     $db = Conexion::getConnection();
-    $query = "SELECT * FROM usuarios where id_usuario=".$id_usuario;
+    $query = "select * from fotos where id_usuario=". $id_usuario;
     $result = $db->query($query);
     return $result;
-
-}
-
-
-
-if(isset($_POST['login'])){
-    
-    getUser($id_usuario);
-    header("Location:".VIEWS_PATH."profile.php?status=1");
 }

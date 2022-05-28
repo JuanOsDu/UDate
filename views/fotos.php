@@ -7,9 +7,6 @@ require_once(CONTROLLER_PATH . "fotos.php");
 if (isset($_GET["status"])) {
     if ($_GET["status"] == 1) {
         session_start();
-        if(!$_SESSION['id_usuario']){
-            header("Location:" . VIEWS_PATH . "login.php");
-        }
 ?>
 
         <body style="background-color: rgb(255, 112, 248) ;">
@@ -65,8 +62,8 @@ if (isset($_GET["status"])) {
                                 <li class="nav-item">
                                     <a class="nav-link" style="text-decoration: none;" href="./fotos.php?status=1">Fotos</a>
                                 </li>
+                                
                                 <li style="margin-left: 85%;">
-
                                 </li>
 
                             </ul>
@@ -74,13 +71,11 @@ if (isset($_GET["status"])) {
                                 <a href="./editProfile.php">
                                     <i class="icon fa-solid fa-3x fa-user-pen"></i>
                                 </a>
-
-
                                 <a href="./explorer.php">
                                     <i class="icon fa-solid fa-3x fa-people-arrows-left-right"></i>
                                 </a>
                                 <a href="./login.php?exit=1">
-                                    <i class="icon fa-solid fa-door-open fa-3x"></i>
+                                <i class="icon fa-solid fa-door-open fa-3x"></i>
                                 </a>
                             </span>
                         </div>
@@ -88,7 +83,7 @@ if (isset($_GET["status"])) {
                 </nav>
                 <div class="row " style="margin-top:50px; ">
 
-                    <div class="col-md-5">
+                    <div class="col-md-12 box-foto" style="display:flex !important; ">
                         <?php
                         $fotos = getFotos($_SESSION['id_usuario']);
                         while ($row = mysqli_fetch_assoc($fotos)) {
@@ -108,41 +103,9 @@ if (isset($_GET["status"])) {
                         }
                         ?>
 
+
                     </div>
-                    <div class="col-md-7">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="card">
 
-                                    <div class="card-body">
-                                        <p style="font-size:2vw; color:white">
-                                            <?php
-
-                                            echo $_SESSION['descripcion'];
-                                            ?>
-                                        </p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="card img-map">
-                                    <div class="card-body">
-
-                                        <img src="../media/map1.png" class="profileMap">
-
-
-
-
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
                 </div>
             </div>
         </body>

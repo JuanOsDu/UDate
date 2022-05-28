@@ -1,0 +1,151 @@
+.card::-webkit-scrollbar-track {
+    background-color: darkgrey;
+   
+}
+
+
+
+.body-register {
+    background-color: rgb(255, 112, 248);
+}
+
+.body-explorer {
+    color: white;
+    background-color: rgb(255, 112, 248);
+}
+
+.body-amigos {
+    color: white;
+    background-color: rgb(255, 112, 248);
+}
+
+body {
+    font-family: 'Bebas Neue', cursive !important;
+
+}
+
+.fa-3x {
+    margin: 10px;
+
+}
+
+.card-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 350px;
+}
+
+
+.body-login {
+    background-color: rgb(255, 112, 248) !important;
+}
+
+.navbar-expand-lg {
+    background-color: rgb(151, 0, 144) !important;
+
+    font-size: large;
+}
+
+.btn-gr {
+    margin-left: 42%;
+    margin-top: 30px !important;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.nav-item {
+    font-size: larger;
+}
+
+.icon {
+    color: wheat;
+    margin-right: 30px;
+}
+.img-map{
+    margin-left: 5px !important;
+}
+
+.imgfeed {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    max-width: 800;
+   
+    border-radius: 5% !important;
+ 
+
+}
+
+.cardFotos {
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+
+}
+box-foto{
+    display:inline-block;width:24%;
+}
+@media all and (max-width: 360px){
+    .box-foto
+    {
+        display:inline-block;
+        width:49%;
+    }
+}
+
+
+.profileMap {
+    max-width: 400px;
+    max-height: 100% !important;
+
+}
+
+.card {
+    background-color: rgb(124, 16, 110) !important;
+    padding: 5px;
+    margin: 5px;
+}
+
+.noEffect {
+    text-decoration: none !important;
+    color: white !important;
+}
+
+#titulo-register {
+    color: white;
+    font-size: 80;
+
+}
+
+.scroll {
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+li {
+    margin-top: 20px;
+    list-style: none;
+}
+
+
+#titulo-register:hover {
+    color: magenta;
+    font-size: 90;
+
+}
+
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    max-width: 500px;
+    border-radius: 100%;
+    position: absolute;
+    margin-left: 10px;
+}
